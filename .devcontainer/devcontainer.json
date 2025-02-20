@@ -1,0 +1,23 @@
+{
+  "name": "React Vite DevContainer",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "vscode.typescript-language-features"
+      ]
+    }
+  },
+
+  "forwardPorts": [5173, 6006],
+  "postCreateCommand": "npm install",
+  "remoteUser": "node"
+}
+
