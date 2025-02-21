@@ -1,0 +1,21 @@
+services:
+  webapi:
+    build:
+      context: webapi
+      dockerfile: Dockerfile.prod
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    restart: always
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile  # 別フォルダのDockerfileを指定
+    ports:
+      - "8080:8080"
+    depends_on:
+      - webapi
+    restart: always

@@ -1,0 +1,4 @@
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+WORKDIR /workspace
+COPY ./publish/. .
+CMD ["dotnet", "webapi.dll"]

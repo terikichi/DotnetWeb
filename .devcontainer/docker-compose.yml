@@ -3,7 +3,7 @@ services:
     container_name: dev-webapi
     build:
       context: ../webapi
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - ..:/workspace:cached
     command: sleep infinity
