@@ -31,4 +31,3 @@ services:
     tty: true
     depends_on:
       - webapi
-
