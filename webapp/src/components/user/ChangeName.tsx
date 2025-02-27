@@ -18,15 +18,15 @@ export const ChangeName = () => {
     const onSubmit: SubmitHandler<ChangeNameFormInputs> = async (data) => {
         setIsLoading(true);
         try {
-            // ƒT[ƒo[‚ÉƒƒOƒCƒ“ƒŠƒNƒGƒXƒg‚ð‘—M
+            // ã‚µãƒ¼ãƒãƒ¼ã«ãƒ­ã‚°ã‚¤ãƒ³ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’é€ä¿¡
             await axios.post('/api/user/ChangeName', data).then(() => {
                 fetchUser();
                 navigate('/PrivatePage');
             });
         } catch (error: any) {
-            // ƒGƒ‰[ƒƒbƒZ[ƒW‚ð•\Ž¦
+            // ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤º
             console.error(error);
-            setErrorMessage(error.response.data.message || 'ƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B');
+            setErrorMessage(error.response.data.message || 'ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚');
         } finally {
             setIsLoading(false);
         }
@@ -42,9 +42,9 @@ export const ChangeName = () => {
                         <dt><label>Name</label></dt>
                         <dd>
                             <input type="text" {...register('name', {
-                                required: "•K{‚Å‚·B",
-                                minLength: { value: 3, message: "–¼‘O‚Í3•¶ŽšˆÈã‚Å‚·B" },
-                                maxLength: { value: 30, message: "–¼‘O‚Í30•¶ŽšˆÈ‰º‚Å‚·B" },
+                                required: "å¿…é ˆã§ã™ã€‚",
+                                minLength: { value: 3, message: "åå‰ã¯3æ–‡å­—ä»¥ä¸Šã§ã™ã€‚" },
+                                maxLength: { value: 30, message: "åå‰ã¯30æ–‡å­—ä»¥ä¸‹ã§ã™ã€‚" },
                             })} />
                             <span>{errors.name?.message}</span>
                         </dd>

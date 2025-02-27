@@ -1,4 +1,4 @@
-﻿import { UserType } from "../../types";
+import { UserType } from "../../types";
 import { useUserContext } from "../../providers";
 import { Navigate, useLocation } from "react-router-dom";
 

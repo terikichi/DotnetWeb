@@ -1,4 +1,4 @@
-﻿export const PrivatePage = () => {
+export const PrivatePage = () => {
     return (
         <div>
             <h2 className="pageTitle">Private Page</h2>

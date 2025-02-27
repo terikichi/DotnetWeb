@@ -1,4 +1,4 @@
-﻿import axios from 'axios';
+import axios from 'axios';
 import React, { useEffect, useState, createContext, useContext } from 'react';
 import { User, numberToUserType, numberToUserState } from '../types';
 
