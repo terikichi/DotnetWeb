@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: calc(100vw - calc(100vw - 100%));
+    font-family: 'Noto Sans JP', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.naviItemContainer {
+    display: flex;
+    max-width: 1080px;
+    height: 60px;
+    margin: auto;
+    align-items: center;
+}
+
+.naviItem {
+    display: block;
+    margin-right: 30px;
+}
+
+.naviItemContainer .naviItem:last-child {
+    display: block;
+    margin-right: 0;
+}
+
+nav {
+    height: 60px;
+    border-bottom: 1px solid #CCCCCC;
+    background: #FFFFFF;
+}
+
+.appTitle {
+    display:inline-block;
+    font-size: 150%;
+}
+
+.naviBarDivider {
+    height: 30px;
+    border-left: 1px solid #CCCCCC;
+}
+
+.flexBlank {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.naviMenuItem {
+    font-weight: bold;
+    font-size: 110%;
+}
+
+
+.pageTitle {
+    font-size: 180%;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.formWrapperBox {
+    width: 280px;
+    margin: 0 auto 50px auto;
+}
+
+.formWrapperBox dl {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 20px 20px;
+}
+
+.formWrapperBox dt,
+.formWrapperBox dd {
+    margin: 0 0 5px 0;
+}
+
+.formWrapperBox dt {
+    font-size: 100%;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.formWrapperBox dd span {
+    color: #ff0000;
+    font-size: 70%;
+    margin: 5px 0 0 0;
+    height: 20px;
+}
+
+.formWrapperBox dd {
+    display: flex;
+    flex-direction: column;
+}
+
+.formErrorMassage {
+    font-size: 85%;
+    height: 20px;
+    color: #ff0000;
+    text-align: center;
+    margin: 20px;
+}
+
+.formFooter {
+    display: flex;
+    justify-content: center;
+}
+
+input[type=text],
+input[type=password],
+select {
+    padding: 5px 10px;
+}
+
+button[type=submit] {
+    padding: 5px 10px;
+}
+
+button.btnLink {
+    background: none;
+    border: none!important;
+    padding: 10px 20px;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+button.btnFrame {
+    background: none;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.color1 {
+    background: #FFFFFF;
+    color: #000000;
+}

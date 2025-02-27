@@ -14,7 +14,7 @@ namespace webapi.Config.Dependancy
         public SqlConnectionDependencySetup(IConfiguration configuration)
         {
             _configuration = configuration;
-            _connectionString = configuration.GetConnectionString("ReactDotNetContext");
+            _connectionString = configuration.GetConnectionString("DotnetWebContext");
         }
 
         public void Run(IServiceCollection services)

@@ -8,21 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 var factory = new DependencySetupFactory();
 var setup = factory.CreateSetup(builder.Configuration);
 setup.Run(builder.Services);
-
 // Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll",
-        policy => policy.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader());
-});
 
 builder.Services.AddControllers();
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 // builder.Services.AddSwaggerGen();
@@ -72,12 +60,17 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
+// Configureメソッド内でクッキーを使用する設定
+app.UseCookiePolicy(new CookiePolicyOptions
+{
+    HttpOnly = HttpOnlyPolicy.Always, // HttpOnly Cookieを使用
+});
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    // app.UseSwagger();
-    // app.UseSwaggerUI();
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
 }
 else
 {
@@ -85,23 +78,9 @@ else
     app.UseStaticFiles();
 }
 
-// Configureメソッド内でクッキーを使用する設定
-app.UseCookiePolicy(new CookiePolicyOptions
-{
-    HttpOnly = HttpOnlyPolicy.Always, // HttpOnly Cookieを使用
-});
-
 app.UseAuthentication();
-
-app.UseHttpsRedirection();
-
-app.UseCors("AllowAll");
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
